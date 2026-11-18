@@ -18,7 +18,7 @@ app.use(cors({ origin: (process.env.CLIENT_ORIGIN || 'http://localhost:3000').sp
 app.use(express.json({ limit: '20kb' }));
 app.use('/api/auth', rateLimit({ windowMs: 15 * 60 * 1000, limit: 10, standardHeaders: 'draft-7', legacyHeaders: false }));
 app.use('/api/enquiries', rateLimit({ windowMs: 15 * 60 * 1000, limit: 20, standardHeaders: 'draft-7', legacyHeaders: false }));
-app.get('/api/health', (_req, res) => res.json({ status: 'ok', service: 'Pexalune API' }));
+app.get('/api/health', (_req, res) => res.json({ status: 'ok', service: 'NAVRIVA API' }));
 app.use('/api/auth', authRoutes);
 app.use('/api/enquiries', enquiryRoutes);
 app.use((err, _req, res, _next) => {
@@ -26,5 +26,5 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ message: 'Something went wrong. Please try again later.' });
 });
 
-connectDatabase().then(() => app.listen(port, () => console.log(`Pexalune API running on http://localhost:${port}`)))
+connectDatabase().then(() => app.listen(port, () => console.log(`NAVRIVA API running on http://localhost:${port}`)))
   .catch(error => { console.error('API startup failed:', error.message); process.exit(1); });

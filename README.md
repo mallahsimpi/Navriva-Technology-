@@ -1,4 +1,4 @@
-# Pexalune Technologies — website + enquiry backend
+# NAVRIVA TECHNOLOGY — website + enquiry backend
 
 Premium responsive marketing website built with Next.js App Router, TypeScript and Tailwind CSS v4, with a separate Express + MongoDB API and a protected admin inbox.
 

@@ -10,3 +10,219 @@
 .contact-form button:disabled{opacity:.65;cursor:wait}.form-error{margin:14px 0 0;padding:12px;background:#fff1f0;color:#a12c25;font-size:12px;border-left:3px solid #c94b42}.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:60;background:#176b45;color:white;padding:14px 19px;border-radius:999px;font-size:12px;font-weight:700;box-shadow:0 10px 28px #07172e35}.whatsapp-float:hover{background:#105638;transform:translateY(-2px)}
 .admin-page{min-height:100vh;background:radial-gradient(ellipse at 85% 0%,#17365e,#07172e 55%);padding:30px 20px 70px;color:#f8fafc}.admin-shell{max-width:1050px;margin:auto}.admin-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff20;padding:0 0 22px}.admin-brand{display:flex;align-items:center;gap:12px}.admin-brand>span{width:42px;height:42px;display:grid;place-items:center;border:1px solid #d4af37;color:#d4af37;font-weight:900;border-radius:10px}.admin-brand b{font:800 15px Manrope;letter-spacing:1.5px}.admin-brand small{display:block;color:#d4af37;font:600 9px 'DM Sans';letter-spacing:3px;margin-top:4px}.admin-logout,.admin-refresh{display:flex;align-items:center;gap:8px;background:#ffffff12;border:1px solid #ffffff25;color:#e8edf5;padding:10px 14px;border-radius:5px;font-size:12px;cursor:pointer}.admin-login{max-width:430px;margin:75px auto 0;padding:38px;background:white;color:#14243b;border-radius:8px;box-shadow:0 24px 80px #0004}.admin-lock{width:48px;height:48px;display:grid;place-items:center;background:#f7f1df;color:#a17b23;border-radius:50%}.admin-kicker{font-size:10px;letter-spacing:2px;font-weight:800;color:#a17b23;margin:20px 0 8px}.admin-login h1,.admin-title-row h1{font:800 32px Manrope;margin:0 0 8px}.admin-subtitle{font-size:13px;color:#7b8798;line-height:1.6;margin:0 0 24px}.admin-login label{display:block;font-size:12px;font-weight:700;color:#42516a;margin-top:17px}.admin-login input{display:block;width:100%;margin-top:8px;padding:13px;border:1px solid #dfe4ec;border-radius:4px;outline:none;color:#14243b}.admin-login input:focus{border-color:#c4a34c}.admin-primary{width:100%;margin-top:22px;background:linear-gradient(110deg,#c99c2e,#f0d58a);padding:14px;border:0;border-radius:4px;font-weight:800;color:#17243a;cursor:pointer}.admin-primary:disabled{opacity:.65}.admin-error{color:#b83a32;font-size:12px;background:#fff0ee;padding:11px;border-radius:4px;margin-top:15px}.admin-content{padding-top:45px}.admin-title-row{display:flex;align-items:end;justify-content:space-between;gap:20px}.admin-title-row .admin-kicker{margin-top:0}.admin-title-row .admin-subtitle{margin-bottom:0}.admin-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}.admin-stats>div{background:#ffffff10;border:1px solid #ffffff20;padding:18px;border-radius:6px}.admin-stats span{display:block;color:#aebbd0;font-size:11px}.admin-stats b{display:block;font:800 28px Manrope;color:#e7c86f;margin-top:7px}.admin-empty{padding:35px;text-align:center;border:1px dashed #ffffff40;color:#bdc8d8;border-radius:6px}.enquiry-list{display:grid;gap:14px}.enquiry-card{background:white;color:#1a2940;border-radius:6px;padding:22px}.enquiry-card-top{display:flex;justify-content:space-between;gap:20px}.enquiry-card h2{font:700 18px Manrope;margin:0 0 5px}.enquiry-card-top span{font-size:10px;color:#8993a2}.enquiry-card select{border:1px solid #e0e4eb;background:#fbfcfe;padding:8px;border-radius:4px;font-size:11px;color:#26364d}.enquiry-meta{display:flex;gap:16px;flex-wrap:wrap;margin:17px 0 12px;font-size:11px;color:#9a7625}.enquiry-card>p{font-size:13px;line-height:1.7;color:#56647a;white-space:pre-wrap}.enquiry-actions{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #edf0f4;padding-top:13px;font-size:11px;color:#92701f}.enquiry-actions button{display:flex;align-items:center;gap:6px;background:none;border:0;color:#a43c35;cursor:pointer;font-size:11px}
 @media(max-width:600px){.whatsapp-float{right:14px;bottom:14px}.admin-page{padding:20px 13px 45px}.admin-login{margin-top:45px;padding:27px 22px}.admin-title-row{align-items:flex-start;flex-direction:column}.admin-stats{gap:8px}.admin-stats>div{padding:13px}.admin-stats b{font-size:23px}.enquiry-card{padding:17px}.enquiry-card-top{align-items:flex-start}.enquiry-meta{gap:9px;flex-direction:column}}
+
+/* =================================
+   NAVRIVA TECHNOLOGY
+   PREMIUM PRICING SECTION
+================================= */
+
+.pricing-section {
+  position: relative;
+  padding: 100px 0;
+  background: #fff;
+  color: #101c35;
+  overflow: hidden;
+}
+
+.pricing-section .section-heading {
+  margin-bottom: 55px;
+}
+
+.pricing-section .section-heading h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #101c35;
+}
+
+.pricing-section .section-heading h2 em {
+  color: #b89555;
+  font-style: normal;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Pricing Card */
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  background: #ffffff;
+  border: 1px solid #e8e1d4;
+  border-radius: 18px;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 25px rgba(16, 28, 53, 0.05);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  border-color: #c9a96e;
+  box-shadow: 0 20px 45px rgba(16, 28, 53, 0.12);
+}
+
+.pricing-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #101c35;
+  margin-bottom: 12px;
+}
+
+.pricing-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #777777;
+  min-height: 45px;
+}
+
+/* Price */
+
+.pricing-amount {
+  margin: 28px 0;
+  padding: 20px 0;
+  border-top: 1px solid #eee8dc;
+  border-bottom: 1px solid #eee8dc;
+}
+
+.pricing-amount span {
+  display: block;
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 8px;
+}
+
+.pricing-amount strong {
+  display: block;
+  font-size: 32px;
+  font-weight: 800;
+  color: #101c35;
+}
+
+/* Features */
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  flex: 1;
+}
+
+.pricing-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 17px;
+  font-size: 13px;
+  color: #4c5360;
+  line-height: 1.5;
+}
+
+.pricing-card li span {
+  color: #c9a96e;
+  font-weight: 800;
+}
+
+/* Buttons */
+
+.pricing-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 40px;
+  background: #101c35;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.pricing-button:hover {
+  background: #c9a96e;
+  color: #101c35;
+}
+
+/* Featured Plan */
+
+.pricing-featured {
+  background: #fffaf0;
+  border: 2px solid #c9a96e;
+  box-shadow: 0 15px 40px rgba(201, 169, 110, 0.15);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 20px;
+  background: #c9a96e;
+  color: #101c35;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.pricing-featured .pricing-button {
+  background: #c9a96e;
+  color: #101c35;
+}
+
+.pricing-featured .pricing-button:hover {
+  background: #101c35;
+  color: #ffffff;
+}
+
+/* Pricing Note */
+
+.pricing-note {
+  margin-top: 35px;
+  text-align: center;
+  color: #777777;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .pricing-section {
+    padding: 70px 0;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .pricing-card {
+    padding: 28px 22px;
+  }
+
+  .pricing-amount strong {
+    font-size: 29px;
+  }
+
+  .pricing-section .section-heading {
+    margin-bottom: 40px;
+  }
+}

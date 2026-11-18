@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pexalune Technologies | Building Tomorrow’s Digital World",
-  description: "Pexalune Technologies builds modern websites, custom software, mobile apps and intelligent business solutions.",
+  title: "NAVRIVA TECHNOLOGY | Building Tomorrow’s Digital World",
+  description: "NAVRIVA TECHNOLOGY builds modern websites, custom software, mobile apps and intelligent business solutions.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
