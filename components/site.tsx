@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Menu, X, Code2, Smartphone, ShoppingCart, Workflow, BrainCircuit, Cloud, ShieldCheck, Zap, Users, Globe2, CheckCircle2, Mail, MapPin, Phone, Sparkles } from "lucide-react";
 
 const services = [
@@ -12,13 +13,46 @@ const services = [
   { icon: BrainCircuit, title: "AI & Business Automation", text: "Reduce repetitive work and make smarter decisions with practical automation." },
   { icon: Cloud, title: "Cloud & API Integration", text: "Connect your tools, services and data with secure, scalable integrations." },
 ];
-
-const navItems = [{ label: "Home", href: "#home" }, { label: "About", href: "#about" }, { label: "Services", href: "#services" }, { label: "Process", href: "#process" }, { label: "Pricing", href: "#pricing" }, { label: "Contact", href: "#contact" }];
+const projects = [
+  {
+    title: "Business Website",
+    category: "Website Development",
+    description: "Modern responsive website for small and growing businesses.",
+    tech: ["Next.js", "Tailwind CSS"],
+    image: "/project/business-apoitment.png",
+    demo: "/demos/business-website"
+  },
+  {
+    title: "E-commerce Platform",
+    category: "E-commerce",
+    description: "Online shopping experience with product and order management.",
+    tech: ["React", "Node.js", "MongoDB"],
+    image: "/project/e-commerce-booking.png",
+    demo: "/demos/ecommerce"
+  },
+  {
+    title: "CRM Management System",
+    category: "Custom Software",
+    description: "Manage customers, enquiries and business operations in one place.",
+    tech: ["Next.js", "Express.js", "MongoDB"],
+    image: "/project/CRM management system.png",
+    demo: "/demos/crm"
+  },
+  {
+    title: "Salon & Appointment Booking",
+    category: "Salon Booking System",
+    description: "Salon services, date/time selection and booking confirmation.",
+    tech: ["Angular", "Node.js"],
+    image: "/project/solen-appointment.png",
+    demo: "/demos/salon-booking"
+  }
+];
+const navItems = [{ label: "Home", href: "#home" }, { label: "About", href: "#about" }, { label: "Services", href: "#services" },  { label: "Projects", href: "#projects" }, { label: "Process", href: "#process" }, { label: "Pricing", href: "#pricing" }, { label: "Contact", href: "#contact" }];
 
 export function Header() {
   const [open, setOpen] = useState(false);
   return <header className="site-header"><div className="container nav-wrap">
-    <Link href="#home" className="brand" aria-label="NAVRIVA TECHNOLOGY home"><span className="brand-mark">N<span>V</span></span><span className="brand-copy"><b>NAVRIVA</b><small>TECHNOLOGIES</small></span></Link>
+    <Link href="#home" className="brand" aria-label="NAVRIVA TECHNOLOGY home"><span className="brand-mark">N<span>V</span></span><span className="brand-copy"><b>NAVRIVA</b><small>TECHNOLOGY</small></span></Link>
     <nav className={open ? "nav-links nav-open" : "nav-links"}>{navItems.map(item => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}<a className="nav-cta" href="#contact" onClick={() => setOpen(false)}>Let’s Talk <ArrowUpRight size={15}/></a></nav>
     <button className="mobile-toggle" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X/> : <Menu/>}</button>
   </div></header>;
@@ -38,6 +72,67 @@ export function About() {
 export function Services() {
   return <section id="services" className="section services-section"><div className="container"><div className="section-heading"><div><div className="eyebrow"><span/> WHAT WE DO</div><h2>Digital solutions for <em>real progress.</em></h2></div><p>Flexible technology services designed around your needs today—and your ambitions for tomorrow.</p></div><div className="service-grid">{services.map((s, i) => <article className="service-card" key={s.title}><div className="service-top"><span className="service-icon"><s.icon size={23}/></span><span className="service-number">0{i + 1}</span></div><h3>{s.title}</h3><p>{s.text}</p><a href="#contact" aria-label={`Enquire about ${s.title}`}><ArrowUpRight size={19}/></a></article>)}</div></div></section>;
 }
+
+
+
+
+
+export function Projects() {
+  return (
+    <section id="projects" className="section projects-section">
+      <div className="container">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">
+              <span /> OUR PROJECTS
+            </div>
+            <h2>Ideas transformed into <em>digital solutions.</em></h2>
+          </div>
+          <p>
+            Explore the types of digital products and solutions
+            we build for businesses.
+          </p>
+        </div>
+
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <article className="project-card" key={project.title}>
+              <div className="project-preview">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="project-image"
+                />
+                <span className="project-number">0{index + 1}</span>
+                <span className="project-category">
+                  {project.category}
+                </span>
+              </div>
+
+              <div className="project-content">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+
+                <div className="project-tech">
+                  {project.tech.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+
+                <Link href={project.demo} className="dark-link">
+                  View Project ↗
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 export function Process() {
   const steps = [{ n: "01", title: "Discover", text: "We understand your goals, audience and the challenge to solve." }, { n: "02", title: "Plan & design", text: "We shape the right solution, user experience and delivery roadmap." }, { n: "03", title: "Build & refine", text: "We develop, test and improve with clear communication throughout." }, { n: "04", title: "Launch & support", text: "We help you go live and plan the next stage of growth." }];
@@ -149,5 +244,5 @@ export function WhatsAppButton() {
 }
 
 export function Footer() {
-  return <footer className="footer"><div className="container footer-main"><div><Link href="#home" className="brand footer-brand"><span className="brand-mark">N<span>V</span></span><span className="brand-copy"><b>NAVRIVA</b><small>TECHNOLOGIES</small></span></Link><p>Building Tomorrow’s Digital World.</p></div><div className="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#process">Our Process</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div><a href="#home" className="back-top">BACK TO TOP ↑</a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} NAVRIVA TECHNOLOGY. All rights reserved.</span><span>Designed for a digital future.</span></div></footer>;
+  return <footer className="footer"><div className="container footer-main"><div><Link href="#home" className="brand footer-brand"><span className="brand-mark">N<span>V</span></span><span className="brand-copy"><b>NAVRIVA</b><small>TECHNOLOGY</small></span></Link><p>Building Tomorrow’s Digital World.</p></div><div className="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#process">Our Process</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div><a href="#home" className="back-top">BACK TO TOP ↑</a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} NAVRIVA TECHNOLOGY. All rights reserved.</span><span>Designed for a digital future.</span></div></footer>;
 }
