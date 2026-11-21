@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import styles from "./demo-projects.module.css";
 
+
 const demoLinks = [
   ["Business Website", "/demos/business-website"],
   ["E-commerce", "/demos/ecommerce"],
@@ -34,7 +35,7 @@ export function BusinessWebsiteDemo() {
         <span className={styles.kicker}>YOUR BUSINESS, ONLINE</span>
         <h1>Make a great first impression.</h1>
         <p>A clean, confident website concept for a growing local business. Introduce your services, build trust and turn visitors into enquiries.</p>
-        <a className={styles.goldButton} href="#enquiry">Request a consultation ↗</a>
+        <Link  className={styles.goldButton} href="#enquiry">Request a consultation ↗</Link>
         <div className={styles.trustLine}><span>✓ Mobile-friendly</span><span>✓ Clear services</span><span>✓ Easy enquiries</span></div>
       </div>
       <div className={styles.businessVisual}>
@@ -108,7 +109,7 @@ export function CRMDemo() {
   return <main className={styles.crmPage}>
     <DemoNav active="/demos/crm" />
     <div className={styles.crmLayout}>
-      <aside className={styles.crmSidebar}><div className={styles.crmLogo}>N<span>V</span> <small>WORKSPACE</small></div><p>OVERVIEW</p><a className={styles.sideActive}>▦ Dashboard</a><a>◷ Enquiries</a><a>▤ Projects</a><a>⚙ Settings</a><div className={styles.crmUser}><b>Demo Admin</b><small>Administrator</small></div></aside>
+      <aside className={styles.crmSidebar}><div className={styles.crmLogo}>N<span>V</span> <small>WORKSPACE</small></div><p>OVERVIEW</p><Link  href="" className={styles.sideActive}>▦ Dashboard</Link><Link  href="#">◷ Enquiries</Link><Link   href="#">▤ Projects</Link><Link  href="#">⚙ Settings</Link><div className={styles.crmUser}><b>Demo Admin</b><small>Administrator</small></div></aside>
       <section className={styles.crmMain}><div className={styles.crmTop}><div><span className={styles.kicker}>WORKSPACE / OVERVIEW</span><h1>Good morning, Admin</h1><p>Here’s what’s happening with your enquiries today.</p></div><span className={styles.demoBadge}>DEMO DATA</span></div>
         <div className={styles.statsGrid}>{[["Total enquiries",String(leads.length)],["New enquiries",String(leads.filter(l=>l.status==="New").length)],["In progress",String(leads.filter(l=>l.status==="In progress").length)],["Completed",String(leads.filter(l=>l.status==="Completed").length)]].map(([label,value])=><article className={styles.statCard} key={label}><small>{label}</small><b>{value}</b><span>Sample workspace</span></article>)}</div>
         <div className={styles.leadPanel}><div className={styles.leadHead}><div><h2>Recent enquiries</h2><p>Search leads and update their status.</p></div><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search enquiries..."/></div>
