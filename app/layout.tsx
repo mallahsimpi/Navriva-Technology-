@@ -25,7 +25,8 @@ export const metadata: Metadata = {
   ],
 
   verification: {
-    google: "simpi110MALLAH1996",
+    google: "rI5PCFik_7wBoG2hUONRXR1pLMXuwvocL0O_HAekjFo",
+   
   },
 
   openGraph: {
